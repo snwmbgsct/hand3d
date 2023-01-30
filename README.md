@@ -26,8 +26,7 @@ Recommended system (tested):
 conda env create -n hand3d -f environment.yml
 ```
 
-## Preprocessing for training and evaluation
-<a name="Preprocessing"></a> 
+## Preprocessing for training and evaluation <a name="Preprocessing"></a> 
 In order to use the training and evaluation scripts you need download and preprocess the datasets.
 
 ### Rendered Hand Pose Dataset (RHD)
@@ -55,10 +54,7 @@ In case you want to retrain the networks on new data you can adapt the code prov
 
 The following steps guide you through training *HandSegNet* and *PoseNet* on the **Rendered Hand Pose Dataset (RHD)**.
 
-- Make sure you followed the steps in the section '(Preprocessing)[]'
-- [链接文本](#Preprocessing)
-
-
+- Make sure you followed the steps in the section [Preprocessing](#Preprocessing)
 - Start training of HandSegNet with training_handsegnet.py
 - Start training of PoseNet with training_posenet.py
 - Set USE_RETRAINED = True on line 32 in eval2d_gt_cropped.py
