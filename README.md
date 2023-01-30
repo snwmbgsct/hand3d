@@ -33,8 +33,8 @@ In order to use the training and evaluation scripts you need download and prepro
 ### Rendered Hand Pose Dataset (RHD)
 
 - Download the dataset accompanying this publication [RHD dataset v. 1.1](https://lmb.informatik.uni-freiburg.de/resources/datasets/RenderedHandposeDataset.en.html)
-- Set the variable 'path_to_db' to where the dataset is located on your machine
-- Optionally modify 'set' variable to training or evaluation
+- Set the variable `path_to_db` to where the dataset is located on your machine
+- Optionally modify `set` variable to **training** or **evaluation** 
 - Run
 
 		python create_binary_db.py
