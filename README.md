@@ -56,16 +56,16 @@ In case you want to retrain the networks on new data you can adapt the code prov
 The following steps guide you through training *HandSegNet* and *PoseNet* on the **Rendered Hand Pose Dataset (RHD)**.
 
 - Make sure you followed the steps in the section [Preprocessing](#Preprocessing)
-- Start training of HandSegNet with training_handsegnet.py
-- Start training of PoseNet with training_posenet.py
-- Set USE_RETRAINED = True on line 32 in eval2d_gt_cropped.py
-- Run eval2d_gt_cropped.py to evaluate the retrained PoseNet on RHD-e
-- Set USE_RETRAINED = True on line 31 in eval2d.py
-- Run eval2d.py to evaluate the retrained HandSegNet + PoseNet on RHD-e
+- Start training of HandSegNet with `training_handsegnet.py`
+- Start training of PoseNet with `training_posenet.py`
+- Set `USE_RETRAINED = True` on line 32 in `eval2d_gt_cropped.py`
+- Run `eval2d_gt_cropped.py` to evaluate the retrained PoseNet on RHD-e
+- Set `USE_RETRAINED = True` on line 31 in `eval2d.py`
+- Run `eval2d.py` to evaluate the retrained HandSegNet + PoseNet on RHD-e
 
 You should be able to obtain results that roughly match the following numbers we obtain with Tensorflow v1.3:
 
-eval2d_gt_cropped.py yields:
+`eval2d_gt_cropped.py` yields:
 
     Evaluation results:
     Average mean EPE: 7.630 pixels
@@ -73,7 +73,7 @@ eval2d_gt_cropped.py yields:
     Area under curve: 0.771
 
 
-eval2d.py yields:
+`eval2d.py` yields:
 
     Evaluation results:
     Average mean EPE: 15.469 pixels
@@ -89,10 +89,10 @@ Note that these results are not listed in the paper.
 
 There are four scripts that evaluate different parts of the architecture:
 
-1. eval2d_gt_cropped.py: Evaluates PoseNet  on 2D keypoint localization using ground truth annoation to create hand cropped images (section 6.1, Table 1 of the paper)
-2.  eval2d.py: Evaluates HandSegNet and PoseNet on 2D keypoint localization (section 6.1, Table 1 of the paper)
-3.  eval3d.py: Evaluates different approaches on lifting 2D predictions into 3D (section 6.2.1, Table 2 of the paper)
-3.  eval3d_full.py: Evaluates our full pipeline on 3D keypoint localization from RGB (section 6.2.1, Table 2 of the paper)
+1. `eval2d_gt_cropped.py`: Evaluates PoseNet  on 2D keypoint localization using ground truth annoation to create hand cropped images (section 6.1, Table 1 of the paper)
+2.  `eval2d.py`: Evaluates HandSegNet and PoseNet on 2D keypoint localization (section 6.1, Table 1 of the paper)
+3.  `eval3d.py`: Evaluates different approaches on lifting 2D predictions into 3D (section 6.2.1, Table 2 of the paper)
+3.  `eval3d_full.py`: Evaluates our full pipeline on 3D keypoint localization from RGB (section 6.2.1, Table 2 of the paper)
 
 This provides the possibility to reproduce results from the paper that are based on the RHD dataset.
 
