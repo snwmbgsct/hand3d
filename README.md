@@ -16,18 +16,18 @@ You can compare your results to the content of the folder "results", which shows
 
 ## Recommended system
 Recommended system (tested):
-- Ubuntu 16.04.2 (xenial)
-- Tensorflow 1.3.0 GPU build with CUDA 8.0.44 and CUDNN 5.1
-- Python 3.5.2
+- Ubuntu 20.04
+- Tensorflow 1.13.0
+- Python 3.7
 
 
-Python packages used by the example provided and their recommended version:
-- tensorflow==1.3.0
-- numpy==1.13.0
-- scipy==0.18.1
-- matplotlib==1.5.3
+##Configure the environment
+```
+conda env create -n hand3d -f environment.yml
+```
 
 ## Preprocessing for training and evaluation
+<a name="Preprocessing"></a> 
 In order to use the training and evaluation scripts you need download and preprocess the datasets.
 
 ### Rendered Hand Pose Dataset (RHD)
@@ -37,25 +37,28 @@ In order to use the training and evaluation scripts you need download and prepro
 - Optionally modify 'set' variable to training or evaluation
 - Run
 
-		python3.5 create_binary_db.py
+		python create_binary_db.py
 - This will create a binary file in *./data/bin* according to how 'set' was configured
 
 ### Stereo Tracking Benchmark Dataset (STB)
-- For eval3d_full.py it is necessary to get the dataset presented in Zhang et al., ‘3d Hand Pose Tracking and Estimation Using Stereo Matching’, 2016
+- For `eval3d_full.py` it is necessary to get the dataset presented in Zhang et al., ‘3d Hand Pose Tracking and Estimation Using Stereo Matching’, 2016
 - After unzipping the dataset run
 
 		cd ./data/stb/
 		matlab -nodesktop -nosplash -r "create_db"
-- This will create the binary file *./data/stb/stb_evaluation.bin*
+- This will create the binary file **./data/stb/stb_evaluation.bin**
 
 
 ## Network training
-We provide scripts to train HandSegNet and PoseNet on the [Rendered Hand Pose Dataset (RHD)](https://lmb.informatik.uni-freiburg.de/resources/datasets/RenderedHandposeDataset.en.html).
+We provide scripts to train **HandSegNet** and **PoseNet** on the [Rendered Hand Pose Dataset (RHD)](https://lmb.informatik.uni-freiburg.de/resources/datasets/RenderedHandposeDataset.en.html).
 In case you want to retrain the networks on new data you can adapt the code provided to your needs.
 
-The following steps guide you through training HandSegNet and PoseNet on the Rendered Hand Pose Dataset (RHD).
+The following steps guide you through training *HandSegNet* and *PoseNet* on the **Rendered Hand Pose Dataset (RHD)**.
 
-- Make sure you followed the steps in the section 'Preprocessing'
+- Make sure you followed the steps in the section '(Preprocessing)[]'
+- [链接文本](#Preprocessing)
+
+
 - Start training of HandSegNet with training_handsegnet.py
 - Start training of PoseNet with training_posenet.py
 - Set USE_RETRAINED = True on line 32 in eval2d_gt_cropped.py
