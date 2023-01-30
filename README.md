@@ -26,7 +26,8 @@ Recommended system (tested):
 conda env create -n hand3d -f environment.yml
 ```
 
-## Preprocessing for training and evaluation <a name="Preprocessing"></a> 
+## Preprocessing for training and evaluation 
+<a name="Preprocessing"></a> 
 In order to use the training and evaluation scripts you need download and preprocess the datasets.
 
 ### Rendered Hand Pose Dataset (RHD)
