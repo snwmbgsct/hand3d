@@ -21,7 +21,7 @@ Recommended system (tested):
 - Python 3.7
 
 
-##Configure the environment
+## Configure the environment
 ```
 conda env create -n hand3d -f environment.yml
 ```
